@@ -1,0 +1,25 @@
+{% extends 'car_pool/base.html' %}
+
+{% block content %}
+  {% csrf_token %}
+  <div class= "car">
+      <h1><a href="{% url 'car_detail' pk=car.pk %}">{{ car.title }}</a></h1>
+      <h1>Thank you {{user.username }} for booking you car with Car Pool Mangagement System</h1>
+      <p>your  car is starting from {{ car.origin }}</p></h2>
+      <p>It is expected to depart: time {{car.departing_date}}</p>
+      <p>it is traveling two {{ car.destination }} <p>
+      <p>and it expected arrival time: {{car.arrival_date}}</p>
+      <p>The driver of the car is = {{ car.driver }}</p>
+      <p> the are still seats {{ car.available_seats}}</p>
+      <p> be sure to tell other that are attending you meeting to book with Car Pool Mangagement System</p>
+
+      <p> return to home via this link <a href="/">Car Pool Mangagement System</a></h1></p>
+
+
+    <div class= "developmentNotes">
+      <p> if the page is refeshed the number of seats is still reduced </p>
+      <p> will be fixed when list of passagers is added we can make sure passager is not already in list </p>
+    </div>
+
+  </div>  
+{% endblock %}

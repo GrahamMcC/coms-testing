@@ -1,0 +1,16 @@
+{% extends 'car_pool/base.html' %}
+
+{% block content %}
+{% for car in cars %}
+  <div class= "car">
+      <h1><a href="{% url 'car_detail' pk=car.pk %}">{{ car.title }}</a></h1>
+      <p>Starting from : {{ car.origin }}</p></h2>
+      <p>Expected departing: time {{car.departing_date}}</p>
+      <p>Traveling two <p>
+      <p>Destination: {{ car.destination }}</p>
+      <p>Expected arrival time: {{car.arrival_date}}</p>
+      <p>Driver = {{ car.driver }}</p>
+      <p>Seats available :{{ car.available_seats|linebreaksbr }}</p>
+  </div>
+{% endfor %}
+{% endblock %}

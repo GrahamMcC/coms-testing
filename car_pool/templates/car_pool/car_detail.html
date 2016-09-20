@@ -1,0 +1,28 @@
+{% extends 'car_pool/base.html' %}
+
+{% block content %}
+  <div class= "car">
+      <h1><a href="{% url 'car_detail' pk=car.pk %}">{{ car.title }}</a></h1>
+      <p>Starting from: {{ car.origin }}</p></h2>
+      <p>expected departing: time {{car.departing_date}}</p>
+      <p>Traveling two <p>
+      <p>Destination: {{ car.destination }}</p>
+      <p>expected arrival time: {{car.arrival_date}}</p>
+      <p>Driver = {{ car.driver }}</p>
+      <p>Seats available: {{ car.available_seats|linebreaksbr }}</p>
+      {% if user.is_authenticated %}
+        <a href="{% url 'car_booked' pk=car.pk %}" class= "btn btn-info" role="button" >book seat</a>
+      {% else %}
+        <p><a href="{% url 'login' %}">Login </a> so you can book your seat</p>
+      {% endif %}
+
+   {% if user.username == car.driver.username %}
+      <a href="{% url 'car_edit' pk=car.pk%}" class = "btn btn-info" role="button" >edit post</a>
+  {% endif %}
+
+    <div class = developmentNotes>
+      <h3>list names of people who have already booked a seat and</h3>
+      <h3>statics and graphs that are generated can be added here</h3>
+    </div>
+  </div>
+{% endblock %}

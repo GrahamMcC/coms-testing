@@ -1,0 +1,36 @@
+h1 a{
+  color: grey;
+}
+
+body {
+  padding-left: 30px;
+}
+
+.developmentNotes {
+ color: green;
+}
+
+.page-header {
+  margin: auto;
+  width: 50%;
+
+}
+
+.car {
+  margin: auto;
+  width: 50%;
+  line-height: 90%;
+
+}
+
+.link {
+  padding-right: 10px;
+}
+
+
+.form {
+  margin: auto;
+  width: 50%;
+  line-height: 90%;
+
+}
